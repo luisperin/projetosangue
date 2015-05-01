@@ -1,0 +1,71 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:panelGrid columns="4" style="width: 100%"
+		columnClasses="rotulo, campo, rotulo, campo">
+
+		<p:outputLabel value="Data Admissão" for="datent" />
+		<p:inputText id="datent" size="50"
+			value="#{funcionarioBean.funcionario.data_entrada}" />
+
+		<p:outputLabel value="Data Desligamento" for="datdesl" />
+		<p:inputText id="datdesl" size="50"
+			value="#{funcionarioBean.funcionario.data_desligamento}" />
+
+		<p:outputLabel value="Data Atribuição" for="dataatri" />
+		<p:inputText id="dataatri" size="50"
+			value="#{funcionarioBean.funcionario.data_atribuicao}" />
+
+
+		<p:outputLabel value="CBO " for="cbo1" />
+		<p:inputText id="cbo1" size="50"
+			value="#{funcionarioBean.funcionario.cbo_funcionario}" />
+
+		<p:outputLabel value="CBO Descrição" for="cbodesc" />
+		<p:inputText id="cbodesc" size="50"
+			value="#{funcionarioBean.funcionario.cbo_descricao}" />
+
+
+		<p:outputLabel value="CH Outros" for="chout" />
+		<p:inputText id="chout" size="50"
+			value="#{funcionarioBean.funcionario.ch_outros}" />
+
+		<p:outputLabel value="Ch Ambulatorio" for="chAn" />
+		<p:inputText id="chAn" size="50"
+			value="#{funcionarioBean.funcionario.ch_ambulatorio}" />
+
+		<p:outputLabel value="ch hospital" for="chhosp" />
+		<p:inputText id="chhosp" size="50"
+			value="#{funcionarioBean.funcionario.ch_hospital}" />
+
+		<p:outputLabel value="CH Total" for="chTtl" />
+		<p:inputText id="chTtl" size="50"
+			value="#{funcionarioBean.funcionario.ch_total}" />
+
+		<p:outputLabel value="Tipo Vinculo" for="vincul" />
+		<p:inputText id="vincul" size="50"
+			value="#{funcionarioBean.funcionario.tipo_vinculo}" />
+
+		<p:outputLabel value="Vinculo Funcionario" for="vincul1" />
+		<p:inputText id="vincul1" size="50"
+			value="#{funcionarioBean.funcionario.vinculo_funcionario}" />
+
+		<p:outputLabel value="Situação Funcionario" for="sintFun" />
+		<p:inputText id="sintFun" size="50"
+			value="#{funcionarioBean.funcionario.situacao_funcionario}" />
+
+		<p:outputLabel value="Cargo Funcionario" for="cargo" />
+		<p:inputText id="cargo" size="50"
+			value="#{funcionarioBean.funcionario.cargo_funcionario}" />
+
+		<p:outputLabel value="Função Funcionario" for="Funcfa" />
+		<p:inputText id="Funcfa" size="50"
+			value="#{funcionarioBean.funcionario.funcao_funcionario}" />
+
+		
+
+	</p:panelGrid>
+</ui:composition>
