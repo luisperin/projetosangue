@@ -27,10 +27,13 @@ import modelo.Cadastro;
 @ViewScoped
 public class CadastroBean implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private Estado estado;// set e set
 
-	//@Inject
-	//private Categorias categorias;
 	@Inject
 	private CadastroService cadastroService;
 	private Cadastro cadastro;
@@ -41,10 +44,6 @@ public class CadastroBean implements Serializable {
 	private List<Cidade> cidades;
 
 	
-	//ivate Categoria categoriaPai;
-	
-	//private List<Categoria> categoriasRaizes;
-	//private List<Categoria> subcategorias;
 
 	public void salvar() {
 		try {
@@ -63,14 +62,10 @@ public class CadastroBean implements Serializable {
 		this.limpar();
 		this.cidades = new ArrayList<Cidade>();
 		
-		//		categoriasRaizes = categorias.raizes();
 		
 	}
 
 
-	public void carregarSubcategorias() {
-		//subcategorias = categorias.subcategoriasDe(categoriaPai);
-	}
 	public void limpar() {
 		this.cadastro = new Cadastro();
 	}
@@ -116,25 +111,5 @@ public class CadastroBean implements Serializable {
 		this.cidades = cidades;
 	}
 
-	
-	//Cateforias aaaa
-	
-/*
-	public Categoria getCategoriaPai() {
-		return categoriaPai;
-	}
 
-	public void setCategoriaPai(Categoria categoriaPai) {
-		this.categoriaPai = categoriaPai;
-	}
-	
-
-	public List<Categoria> getCategoriasRaizes() {
-		return categoriasRaizes;
-	}
-
-	public List<Categoria> getSubcategorias() {
-		return subcategorias;
-	}
-*/
 }
