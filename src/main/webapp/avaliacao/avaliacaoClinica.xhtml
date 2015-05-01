@@ -1,0 +1,52 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:o="http://omnifaces.org/ui">
+
+    <ui:define name="titulo">Avaliação</ui:define>
+    
+    <ui:define name="corpo">
+    	<h1>Avaliação</h1>
+    	
+    	<h:form id="frmCadastro">
+    		<p:messages id="messages" autoUpdate="true" closable="true" />
+    	
+	    	<p:toolbar style="margin-top: 20px">
+	    		<p:toolbarGroup>
+	    			<p:commandButton value="Salvar" id="botaoSalvar" action="#{avaliacaoClinicBean.salvar}" update="frmCadastro"/>
+	    		</p:toolbarGroup>
+	    	</p:toolbar>
+	    	
+	    	<p:panelGrid columns="2" id="painel" style="width: 100%; margin-top: 20px"
+	    			columnClasses="rotulo, campo">
+	    		<p:outputLabel value="Doador" for="doa"/>
+	    		<p:selectOneMenu id="doa" value="#{avaliacaoClinicBean.triagemClinicResp.triagemCliQuest}">
+	    			<f:selectItem itemLabel="Selecione o Doador" />
+	    			<f:selectItems value="#{avaliacaoClinicBean.triagemCliQuests}" var="doa" 
+						itemLabel="#{doa.doad.descricao}: #{doa.codext}" itemValue="#{doa}"/>
+	    		</p:selectOneMenu>
+	    		
+	    	</p:panelGrid>
+	    	
+	    	<h:outputText value="Aptidão Clinica" style="font-size: 18px; display: block; margin-top: 20px"/>
+	    	
+	    	<p:panelGrid columns="2" id="painelClinic" style="width: 100%; margin-top: 20px"
+	    			columnClasses="rotulo, campo">
+		    	<p:outputLabel value="Apto" for="sm"/>
+    			<p:selectBooleanCheckbox id="sm" value="#{avaliacaoClinicBean.triagemClinicResp.aptidao.sim}"/>
+    			
+    			<p:outputLabel value="Não Apto" for="np"/>
+    			<p:selectBooleanCheckbox id="np" value="#{avaliacaoClinicBean.triagemClinicResp.aptidao.nao}"/>
+    			
+    			<p:outputLabel value="Remarcar Rb" for="remarc"/>
+    			<p:selectBooleanCheckbox id="remarc" value="#{avaliacaoClinicBean.triagemClinicResp.aptidao.remarcar}"/>
+    			
+    			<p:outputLabel value="Observação" for="obs"/>
+	    		<p:inputText id="obs" size="20" maxlength="20" value="#{avaliacaoClinicBean.triagemClinicResp.aptidao.ob1}"/>
+    		</p:panelGrid>  		
+    	</h:form>
+    </ui:define>
+</ui:composition>
