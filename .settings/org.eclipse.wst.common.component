@@ -5,6 +5,6 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
         <property name="java-output-path" value="/unitan-jefer/target/classes"/>
-        <property name="context-root" value="unitan-jefer005e"/>
+        <property name="context-root" value="SistemaUnitan"/>
     </wb-module>
 </project-modules>
