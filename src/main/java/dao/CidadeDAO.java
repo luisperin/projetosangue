@@ -25,15 +25,17 @@ public class CidadeDAO implements Serializable {
 		return manager.find(Cidade.class, codigo);
 	}
 	
+	//Retorna lista de estado de acordo com o parametro
+	@SuppressWarnings("unchecked")
 	public List<Cidade> buscarCidades(Estado estado){
 		Session session = this.manager.unwrap(Session.class);
-		Criteria criteria = session.createCriteria(Cidade.class);
+		Criteria criteriaConsulta = session.createCriteria(Cidade.class);
 		
 		if(estado != null){
-			criteria.add(Restrictions.eq("estado", estado));
+			criteriaConsulta.add(Restrictions.eq("estado", estado));
 		}
 		
-		return criteria.list();
+		return criteriaConsulta.list();
 	}
 	
 }

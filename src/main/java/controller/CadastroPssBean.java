@@ -17,6 +17,7 @@ import modelo.Cadastro;
 import modelo.NovaPergunta;
 import modelo.PreTriagem;
 import modelo.TriagemCliQuest;
+import modelo.TriagemClinicResp;
 import dao.CadastroDAO;
 import dao.PeruntaDAO;
 import dao.PreTriagemDAO;
@@ -30,7 +31,7 @@ public class CadastroPssBean implements Serializable {
 	private TriagemCliQuest triagemCliQuest;
 
 	
-	private List<PreTriagem> pretriagem;//modelo
+	private List<PreTriagem> pretriagem;//mode
 	
 	private List<NovaPergunta> novaPergunta;//para o doador
 	
@@ -47,6 +48,8 @@ public class CadastroPssBean implements Serializable {
 	
 	@Inject
 	private PreTriagemDAO preTriagemDAO;
+	
+	private TriagemClinicResp triagemClinicResp;
 	
 	@PostConstruct
 	public void inicializar() {

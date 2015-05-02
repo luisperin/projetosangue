@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 
 @Entity
@@ -21,7 +22,6 @@ public class Cadastro {
 	
 //	private Categoria categoria;
 	
-	private Cidade cidade;
 	//-------------------
 	
 	private Long codigo;	
@@ -274,21 +274,6 @@ public class Cadastro {
 		this.e_mail = e_mail;
 	}
 	
-	
-/*	@NotNull
-	@ManyToOne
-	@JoinColumn(name = "categoria_id", nullable = false)
-	public Categoria getCategoria() {
-		return categoria;
-	}
-
-	public void setCategoria(Categoria categoria) {
-		this.categoria = categoria;
-	}
-	
-	*/
-	
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -296,6 +281,7 @@ public class Cadastro {
 		result = prime * result + ((codigo == null) ? 0 : codigo.hashCode());
 		return result;
 	}
+	
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -313,5 +299,6 @@ public class Cadastro {
 			return false;
 		return true;
 	}
+
 
 }

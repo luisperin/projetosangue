@@ -25,8 +25,8 @@
 				<p:toolbarGroup align="right">
 				</p:toolbarGroup>
 			</p:toolbar>
-			<p:panelGrid columns="2" id="painel"
-				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo">
+			<p:panelGrid columns="4" id="painel"
+				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo, rotulo, campo">
 
 
 				<p:outputLabel value="Nome" for="nome" />
@@ -83,6 +83,7 @@
 			</p:panelGrid>
 
 
+
 			<p:tabView style="margin-top: 20px">
 				<p:tab title="Filiação">
 					<ui:include
@@ -98,9 +99,12 @@
 					<ui:include
 						src="/WEB-INF/template/dadosdoador/enderecodoador.xhtml" />
 				</p:tab>
-
 			</p:tabView>
+
+
 		</h:form>
+
+
 	</ui:define>
 
 </ui:composition>

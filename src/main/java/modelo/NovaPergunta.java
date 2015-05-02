@@ -12,16 +12,31 @@ public class NovaPergunta {
 
 	private Long codigo;
 	private String descricao;
+	private String RespSN;
     private String Date;	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Long getCodigo() {
 		return codigo;
 	}
+	
+	
 	public void setCodigo(Long codigo) {
 		this.codigo = codigo;
 	}
 	
+	
+	
+	public String getRespSN() {
+		return RespSN;
+	}
+
+
+	public void setRespSN(String respSN) {
+		RespSN = respSN;
+	}
+
+
 	public String getDescricao() {
 		return descricao;
 	}

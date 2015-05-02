@@ -27,22 +27,31 @@ import modelo.Cadastro;
 @ViewScoped
 public class CadastroBean implements Serializable {
 
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 
-	private Estado estado;// set e set
+	private Estado estado;
+	private Cidade cidade;
+    private Cadastro cadastro;
 
+	
 	@Inject
-	private CadastroService cadastroService;
-	private Cadastro cadastro;
-	private EstadoDAO estadoDAO;// gets e sets
+	private EstadoDAO estadoDAO;
+    @Inject	
 	private CidadeDAO cidadeDAO;
 
+	
 	private List<Estado> estados;
 	private List<Cidade> cidades;
 
+
+
+	@Inject
+	private CadastroService cadastroService;
+
+	
+	
+	
 	
 
 	public void salvar() {
@@ -61,8 +70,7 @@ public class CadastroBean implements Serializable {
 	public void init() {
 		this.limpar();
 		this.cidades = new ArrayList<Cidade>();
-		
-		
+	
 	}
 
 
@@ -75,10 +83,21 @@ public class CadastroBean implements Serializable {
 		cidades = cidadeDAO.buscarCidades(estado);
 	}
 
+	
+	
 	public Cadastro getCadastro() {
 		return cadastro;
 	}
 
+	public void setCadastro(Cadastro cadastro) {
+		this.cadastro = cadastro;
+	}
+
+	/*
+	public Cadastro getCadastro() {
+		return cadastro;
+	}
+*/
 	public Estado getEstado() {
 		return estado;
 	}
@@ -95,7 +114,15 @@ public class CadastroBean implements Serializable {
 		this.estadoDAO = estadoDAO;
 	}
 
-	public List<Estado> getEstados() {
+	public List<Estado> getEstados() throws NegocioException {
+try {
+	if( (estado == null) || (estados.size()==0)) {
+		estados = estadoDAO.buscarEstados();		
+	}
+
+} catch (Exception e) {// exeção
+	
+}
 		return estados;
 	}
 
@@ -109,6 +136,14 @@ public class CadastroBean implements Serializable {
 
 	public void setCidades(List<Cidade> cidades) {
 		this.cidades = cidades;
+	}
+
+	public Cidade getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(Cidade cidade) {
+		this.cidade = cidade;
 	}
 
 

@@ -21,7 +21,7 @@ public class TriagemCliQuest {
 	private String codext;
 	private String Naptidao;
 	private String volColeta;
-	private PreTriagem doad;
+private PreTriagem doad;//Achei
 	private Cadastro cadastro;
 	private String apto;
 	private String naoApto;
@@ -61,13 +61,22 @@ public class TriagemCliQuest {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="codigo_doad")
-	public PreTriagem getDoad() {
+@JoinColumn(name="codigo_doad")//codigo doador
+public PreTriagem getDoad() {
 		return doad;
 	}
+	
+	public void setDoad(PreTriagem doad) {
+		this.doad = doad;
+	}
+
+	
+	
 	public String getApto() {
 		return apto;
 	}
+
+	
 	public void setApto(String apto) {
 		this.apto = apto;
 	}
@@ -76,9 +85,6 @@ public class TriagemCliQuest {
 	}
 	public void setNaoApto(String naoApto) {
 		this.naoApto = naoApto;
-	}
-	public void setDoad(PreTriagem doad) {
-		this.doad = doad;
 	}
 
 	public String getVolColeta() {
