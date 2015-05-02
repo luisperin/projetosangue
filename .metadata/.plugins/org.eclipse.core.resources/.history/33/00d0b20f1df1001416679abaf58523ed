@@ -8,7 +8,7 @@
 	<ui:define name="titulo">::UNITAN::</ui:define>
 
 	<ui:define name="corpo">
-		<br/><br/><br/>UNIDADE DE COLETA DE SANGUE --> UNITAN<br/><br/><br/>
+		<br/><br/><br/>Seja bem-vindo!<br/><br/><br/>
 	</ui:define>
 
 </ui:composition>
