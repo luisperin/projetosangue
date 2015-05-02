@@ -1,0 +1,102 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" xmlns:o="http://omnifaces.org/ui">
+
+	<ui:define name="titulo">Cadastro Funcionario</ui:define>
+
+	<ui:define name="corpo">
+		<f:metadata>
+			<o:viewParam name="cadastrofuncionario"
+				value="#{funcionarioBean.funcionario}" />
+		</f:metadata>
+
+		<h1>cadastro Funcionario</h1>
+
+		<h:form id="frmCadastro">
+			<p:messages id="messages" autoUpdate="true" closable="true" />
+
+			<p:toolbar style="margin-top: 20px">
+				<p:toolbarGroup>
+					<p:commandButton value="Salvar" id="botaoSalvar"
+						action="#{funcionarioBean.salvar}" update="frmCadastro" />
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+				</p:toolbarGroup>
+			</p:toolbar>
+
+			<p:panelGrid columns="4" id="painel"
+				style="width: 100%; margin-top: 20px" columnClasses="rotulo, campo,rotulo, campo">
+
+				<p:outputLabel value="Nome" for="nome" />
+				<p:inputText id="nome" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.nome_funcionario}" />
+
+				<p:outputLabel value="Data NASx" for="dt" />
+				<p:calendar id="dt" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.data_nascimento}" />
+
+				<p:outputLabel value="Idade" for="idd" />
+				<p:inputText id="idd" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.idade}" />
+
+				<p:outputLabel value="Pais NAS" for="psnas" />
+				<p:inputText id="psnas" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.pais_nascimento}" />
+	
+				<p:outputLabel value="Nascionalidade" for="nascio" />
+				<p:inputText id="nascio" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.nacionalidade}" />
+
+				<p:outputLabel value="Sexo" for="sx" />
+				<p:inputText id="sx" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.sexo}" />
+
+				<p:outputLabel value="Etnia" for="etn" />
+				<p:inputText id="etn" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.etnia}" />
+
+
+				<p:outputLabel value="Estado Civil" for="stcivil" />
+				<p:inputText id="stcivil" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.estado_civil}" />
+
+				<p:outputLabel value="Escolaridade" for="escla" />
+				<p:inputText id="escla" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.escolaridade}" />
+
+				<p:outputLabel value="ABO" for="abo1" />
+				<p:inputText id="abo1" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.abo}" />
+
+				<p:outputLabel value="RH" for="rh1" />
+				<p:inputText id="rh1" size="60" maxlength="80"
+					value="#{funcionarioBean.funcionario.rh}" />
+
+
+
+
+			</p:panelGrid>
+
+			 <p:tabView style="margin-top: 20px">
+	    		<p:tab title="Documentos">
+	    			<ui:include src="/WEB-INF/template/dadosfuncionarios/documentos.xhtml" />
+	    		</p:tab>
+	    		<p:tab title="Filiação">
+	    			<!--  ui:include src="/WEB-INF/template/dadosfuncionarios/filiacao.xhtml"/-->
+	    		</p:tab>
+	    
+
+	    		<p:tab title="Endereços">
+	    			<ui:include src="/WEB-INF/template/dadosfuncionarios/enderecos.xhtml"/>
+	    		</p:tab>
+	<p:tab title="Dados Profissionais">
+	    			<ui:include src="/WEB-INF/template/dadosfuncionarios/profissionais.xhtml"/>
+	    		</p:tab>
+	    
+	    	</p:tabView> 
+		</h:form>
+	</ui:define>
+</ui:composition>

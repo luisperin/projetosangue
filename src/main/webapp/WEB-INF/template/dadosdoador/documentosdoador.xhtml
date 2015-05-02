@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+	<p:panelGrid columns="4" style="width: 100%" columnClasses="rotulo, campo, rotulo, campo">
+		
+		
+		
+		<p:outputLabel value="CPF" for="cpf1" />
+        <p:inputMask id="cpf1" size="50" 
+        	value="#{cadastroBean.cadastro.cpf}" mask="999.9999.9999"/>
+
+		<p:outputLabel value="RG" for="rg1" />
+        <p:inputText id="rg1" size="50" 
+        	value="#{cadastroBean.cadastro.rg}"/>
+
+		<p:outputLabel value="Data Emissao" for="emissao1" />
+        <p:inputText id="emissao1" size="50" 
+        	value="#{cadastroBean.cadastro.data_emissao_rg}"/>
+
+		<p:outputLabel value="Orgao Exp" for="orgxp" />
+        <p:inputText id="orgxp" size="50" 
+        	value="#{cadastroBean.cadastro.orgão_expeditor}"/>
+
+		<p:outputLabel value="Estado Emissor" for="staemi" />
+        <p:inputText id="staemi" size="50" 
+        	value="#{cadastroBean.cadastro.estado_emissor}"/>
+
+		<p:outputLabel value="Catao cns" for="ctns" />
+        <p:inputText id="ctns" size="50" 
+        	value="#{cadastroBean.cadastro.cartao_cns}"/>
+		
+
+       	</p:panelGrid>
+</ui:composition>

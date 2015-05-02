@@ -1,0 +1,55 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+	<p:panelGrid columns="2" style="width: 100%" columnClasses="rotulo, campo, rotulo, campo">
+	
+	
+
+	
+	
+	<p:outputLabel value="Logradouro" for="lgd" />
+        <p:inputText id="lgd" size="50" 
+        	value="#{cadastroBean.cadastro.logradouro}"/>
+	  	
+	  	<p:outputLabel value="Numero" for="numer" />
+        <p:inputText id="numer" size="50" 
+        	value="#{cadastroBean.cadastro.numero}"/>
+        	
+        	<p:outputLabel value="Complemento" for="complet" />
+        <p:inputText id="complet" size="50" 
+        	value="#{cadastroBean.cadastro.complemento}"/>
+
+        	        <p:outputLabel value="Bairro" for="brr"/>
+        <p:inputText id="brr" size="50"/>
+        
+        
+        	
+        	<p:outputLabel value="Zona" for="zona1" />
+        <p:inputText id="zona1" size="50" 
+        	value="#{cadastroBean.cadastro.zona}"/>
+        	
+        		
+        	<p:outputLabel value="Telefone Fixo" for="tel1" />
+        <p:inputText id="tel1" size="50" 
+        	value="#{cadastroBean.cadastro.fone_fixo}"/>
+        	
+        		
+        	<p:outputLabel value="Celular" for="cel1" />
+        <p:inputText id="cel1" size="50" 
+        	value="#{cadastroBean.cadastro.fone_celular}"/>
+        	
+        		
+        	<p:outputLabel value="Telefone Recados" for="telrec" />
+        <p:inputText id="telrec" size="50" 
+        	value="#{cadastroBean.cadastro.fone_recado}"/>
+
+        	 	
+        	<p:outputLabel value="E-mail" for="e-mail" />
+        <p:inputText id="e-mail" size="50" 
+        	value="#{cadastroBean.cadastro.e_mail}"/>
+	
+  	</p:panelGrid>	
+</ui:composition>

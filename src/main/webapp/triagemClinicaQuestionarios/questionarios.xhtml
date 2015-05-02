@@ -1,0 +1,120 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:o="http://omnifaces.org/ui">
+
+    <ui:define name="titulo">Triagem-Clinica</ui:define>
+    
+    <ui:define name="corpo">
+    	<f:metadata>
+			<o:viewParam name="cadastro" value="#{triagemCliQuest.cadastro}"/>
+		</f:metadata>
+    
+    	<h1>Triagem Clinica</h1>
+    	
+    	<h:form id="frmCadastro">
+    		<p:messages id="messages" autoUpdate="true" closable="true" />
+    	
+	    	<p:toolbar style="margin-top: 20px">
+	    		<p:toolbarGroup>
+	    			<p:commandButton value="Salvar" id="botaoSalvar" action="#{cadastroPssBean.salvar}" update="frmCadastro"/>
+	    	<span class="ui-separetor">
+	    	</span>
+	    	
+	    	
+	    		</p:toolbarGroup>
+	    		<p:toolbarGroup align="right">
+				</p:toolbarGroup>
+	    	</p:toolbar>
+	    	
+	    	
+	    				   <h:outputText value="Data Atendimento" style="font-size: 18px; display: block; margin-top: 20px"/>
+		    	<p:panelGrid columns="2" id="atendimento" style="width: 100%; margin-top: 20px"
+	    			columnClasses="rotulo, campo">
+	
+	    				
+	    				 <p:outputLabel value="Doador" for="preTriagem"/>
+	    		<p:selectOneMenu id="preTriagem" value="#{cadastroPssBean.triagemCliQuest.cadastro}">
+	    			<f:selectItem itemLabel="Selecione Doador" />
+	    			<f:selectItems value="#{cadastroPssBean.cadastros}" var="pretriagem" 
+						itemLabel="#{pretriagem.nome_candidato}" itemValue="#{pretriagem}"/>
+	    		</p:selectOneMenu>
+	    			   </p:panelGrid>
+	    	
+	    	
+	
+  <h:outputText value="Questionario Clinico" style="font-size: 18px; display: block; margin-top: 20px"/>
+ <p:panelGrid columns="4" id="EstionarioCLinico" style="width: 100%; margin-top: 20px"
+	    			columnClasses="rotulo, campo, rotulo, campo">
+			<p:outputLabel />
+		  <p:inputText id="resp" size="8" maxlength="20" value="#{cadastrarperguntasBean.novaPergunta.respSN}"/>
+			 
+	
+		
+				<p:selectManyCheckbox  id="quest"
+					value="#{cadastroPssBean.triagemCliQuest.novaPergunta}" layout="pageDirection">
+					<f:selectItems value="#{cadastroPssBean.novaPerguntas}"
+						var="inserirperguntas" itemLabel="#{inserirperguntas.descricao}"
+						itemValue="#{inserirperguntas}" />
+						 </p:selectManyCheckbox>
+				
+				
+ </p:panelGrid> 
+
+
+		  	<p:panelGrid columns="2" id="avaliacao" style="width: 100%; margin-top: 20px"
+	    			columnClasses="rotulo, campo">
+					   
+			    
+			    <p:outputLabel value="Codigo de Inaptidão" for="codInap"/>
+			    <p:inputText id="codInap" size="20" maxlength="20" value="#{cadastroPssBean.triagemCliQuest.codext}"/>
+			    		
+			    <p:outputLabel value="N de Dias de inaptidão" for="inapt"/>
+			    <p:inputText id="inapt" size="20" maxlength="20" value="#{cadastroPssBean.triagemCliQuest.naptidao}"/>
+			    		
+			    <p:outputLabel value="Volume a ser Coletado" for="valorcoleta"/>
+			    <p:inputText id="valorcoleta" size="20" maxlength="20" value="#{cadastroPssBean.triagemCliQuest.volColeta}"/>
+			    
+			</p:panelGrid>
+
+
+
+<p:toolbar style="margin-top: 20px">
+	    		<p:toolbarGroup>
+	    			<p:commandButton value="Salvar" id="botaoSaLAVA" action="#{avaliacaoClinicBean.salvar}" update="frmCadastro"/>
+	    		</p:toolbarGroup>
+	    	</p:toolbar>
+	    	
+	    	<p:panelGrid columns="2" id="painelAVALIACAO" style="width: 100%; margin-top: 20px"
+	    			columnClasses="rotulo, campo">
+	    		<p:outputLabel value="Doador" for="doa"/>
+	    		<p:selectOneMenu id="doa" value="#{avaliacaoClinicBean.triagemClinicResp.triagemCliQuest}">
+	    			<f:selectItem itemLabel="Selecione o Doador" />
+	    			<f:selectItems value="#{avaliacaoClinicBean.triagemCliQuests}" var="doa" 
+						itemLabel="#{doa.doad.descricao}: #{doa.codext}" itemValue="#{doa}"/>
+	    		</p:selectOneMenu>
+	    		
+	    	</p:panelGrid>
+	    	
+	    	<h:outputText value="Aptidão Clinica" style="font-size: 18px; display: block; margin-top: 20px"/>
+	    	
+	    	<p:panelGrid columns="4" id="painelClinic" style="width: 100%; margin-top: 20px"
+	    			columnClasses="rotulo, campo, rotulo, campo">
+		    	<p:outputLabel value="Apto" for="sm"/>
+    			<p:selectBooleanCheckbox id="sm" value="#{avaliacaoClinicBean.triagemClinicResp.aptidao.sim}"/>
+    			
+    			<p:outputLabel value="Não Apto" for="np"/>
+    			<p:selectBooleanCheckbox id="np" value="#{avaliacaoClinicBean.triagemClinicResp.aptidao.nao}"/>
+    			
+    			<p:outputLabel value="Remarcar Rb" for="remarc"/>
+    			<p:selectBooleanCheckbox id="remarc" value="#{avaliacaoClinicBean.triagemClinicResp.aptidao.remarcar}"/>
+    			
+    			<p:outputLabel value="Observação" for="obs"/>
+	    		<p:inputText id="obs" size="20" maxlength="20" value="#{avaliacaoClinicBean.triagemClinicResp.aptidao.ob1}"/>
+    		</p:panelGrid>  		
+    	</h:form>
+    </ui:define>
+</ui:composition>
