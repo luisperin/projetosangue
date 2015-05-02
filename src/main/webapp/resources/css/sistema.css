@@ -109,3 +109,22 @@ h1 {
 .many-checkbox td label {
 	padding-right: 10px;
 }
+
+
+
+#login-dialog {
+	width: 390px;
+	margin: auto;
+	margin-top: 250px;
+float: right;
+}
+
+.grid-login {
+	background-color: blue;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	margin-top: 10px;
+	padding: 40px;
+	height: 200px;
+		width: 300px;
+}
